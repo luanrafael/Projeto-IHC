@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title> Projeto IHC </title>
+		
+		<meta charset="utf-8"/>
+
+		<meta author="Carolina Melo">
+		<meta author="Luan Rafael">
+		<meta author="Roberta Abreu">
+
+		<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+		<link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+		<link href="css/features.css" rel="stylesheet" media="screen">
+		
+		<script src="js/jquery-latest.js"></script>
+
+    	<script src="js/bootstrap.min.js"></script>
+		<script src="js/hammer.js"></script>
+		<script src="js/jquery.hammer.js"></script>
+    	<script src="js/features.js"></script>
+
+
+	</head>
+
+	<body class="container-fluid">
+	    <header class="row-fluid visible-desktop">
+	        <div class="span8 offset2">
+	            	<h1>Projeto IHC <br></h1>
+
+	             <h2>Visualização de dados - Produção agrícola </h2>
+
+	            <div class="visible-desktop">
+	                <h5>
+	                	Posicione o mouse sobre a imagem para visualizar as informações.
+	                	<br> Clique duas vezes na imagem para pesquisar sobre o alimento.
+	                </h5>
+
+	            </div>
+	        </div>
+	    </header>
+	     <h5 class="hidden-desktop">
+	     	Toque uma vez na imagem para visualizar as informações.
+	     	<br> E duas vezes para pesquisar sobre o alimento. 
+	     </h5>
+
+	    <div class="row-fluid graos">
+	        <div class="span2">
+	            <h2>Detalhes</h2>
+	            <hr>
+	            <div id="descricao"></div>
+	        </div>
+	        <div class="span10" id="carrosel">
+	        	 <div>
+	                 <h2>Alimentos <small>(Por Categoria)</small></h2>
+            	</div>
+	        	<div id="myCarousel" class="carousel slide">
+				  
+				  <!-- Itens de carousel -->
+				  <div class="carousel-inner">
+				    
+<!-- 				  	<div class="active item">
+
+				  	</div> -->
+
+				    <!-- BEBIDAS -->
+				    <div class="active item">
+		    	            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='leite' data-unidade="Milhões de Litros" data-atual='32.539' data-projecao='39.250' data-variacao='20,6' data-label='Leite' src='img/bebidas/leite_grafico.png' alt='Leite' onmouseover="showDesc( 'leite')" onmouseout='cleanDesc()' />
+	                        <img ondblclick="googleSearch(this)" class="elementoGrafico" id='café' data-unidade="Milhões de sacas" data-atual='50' data-projecao='71' data-variacao='41.2' data-label='Café' src='img/bebidas/cafe_grafico.png' alt='Café' onmouseover="showDesc( 'café')" onmouseout='cleanDesc()' />	
+				    </div>
+
+				    <!-- CARNES -->
+				    <div class="item">
+			            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='carneFrango' data-unidade="Mil Toneladas" data-atual='13.028' data-projecao='20.332' data-variacao='56.1' data-label='Frango' src='img/carnes/frango_grafico.png' alt='Carne Frango' onmouseover="showDesc( 'carneFrango')" onmouseout='cleanDesc()' />
+			            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='carneBovina' data-unidade="Mil Toneladas" data-atual='8.947' data-projecao='11.834' data-variacao='32.3' data-label='Carne Bovina' src='img/carnes/boi_grafico.png' alt='Carne Bovina' onmouseover="showDesc( 'carneBovina')" onmouseout='cleanDesc()' />
+			            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='carneSuina' data-unidade="Mil Toneladas" data-atual='3.334' data-projecao='4.067' data-variacao='22' data-label='Carne Suína' src='img/carnes/porco_grafico.png' alt='Carne Suína' onmouseover="showDesc( 'carneSuina')" onmouseout='cleanDesc()' />	
+				    </div>
+
+				    <!-- Frutas -->
+				    <div class="item">
+				    	<!-- laranja -->
+			            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='laranja' data-unidade="Mil Toneladas" data-atual='19.332' data-projecao='23.593' data-variacao='22' data-label='Laranja' src='img/frutas/laranja_grafico.png' alt='Laranja' onmouseover="showDesc( 'laranja')" onmouseout='cleanDesc()' />
+			            <!-- uva -->
+			            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='uva' data-unidade="Mil Toneladas" data-atual='1.451' data-projecao='1.780' data-variacao='22.7' data-label='Uva' src='img/frutas/uva_grafico.png' alt='Uva' onmouseover="showDesc( 'uva')" onmouseout='cleanDesc()' />
+			            <!-- maca -->
+			            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='maca' data-unidade="Mil Toneladas" data-atual='1.366' data-projecao='1.811' data-variacao='32.6' data-label='Maçã' src='img/frutas/maca_grafico.png' alt='Maçã' onmouseover="showDesc( 'maca')" onmouseout='cleanDesc()' />
+			            <!-- banana -->
+			            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='banana' data-unidade="Mil Toneladas" data-atual='661' data-projecao='689' data-variacao='4.3' data-label='Banana' src='img/frutas/banana_grafico.png' alt='Banana' onmouseover="showDesc( 'banana')" onmouseout='cleanDesc()' />
+			            <!-- cacau -->
+			            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='cacau' data-unidade="Mil Toneladas" data-atual='253' data-projecao='259' data-variacao='2.6' data-label='Cacau' src='img/frutas/cacau_grafico.png' alt='Cacau' onmouseover="showDesc( 'cacau')" onmouseout='cleanDesc()' />
+
+				    </div>
+
+				    <div class="item">
+
+				    	<!-- soja -->
+			            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='soja' data-unidade="Mil Toneladas" data-atual='71.100' data-projecao='88.913' data-variacao='25.1' data-label='Soja' src='img/graos/soja_grafico.png' alt='Soja' onmouseover="showDesc( 'soja')" onmouseout='cleanDesc()' />
+			            <!-- milho -->
+			            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='milho' data-unidade="Mil Toneladas" data-atual='59.651' data-projecao='70.421' data-variacao='18.1' data-label='Milho' src='img/graos/milho_grafico.png' alt='Milho' onmouseover="showDesc( 'milho')" onmouseout='cleanDesc()' />
+			            <!-- arroz -->
+			            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='arroz' data-unidade="Mil Toneladas" data-atual='13.208' data-projecao='15.242' data-variacao='15.4' data-label='Arroz' src='img/graos/arroz_grafico.png' alt='Arroz' onmouseover="showDesc( 'arroz')" onmouseout='cleanDesc()' />
+			            <!-- trigo -->
+			            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='trigo' data-unidade="Mil Toneladas" data-atual='5.680' data-projecao='6.937' data-variacao='22.1' data-label='Trigo' src='img/graos/trigo_grafico.png' alt='Trigo' onmouseover="showDesc( 'trigo')" onmouseout='cleanDesc()' />
+			            <!-- feijao -->
+			            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='feijao' data-unidade="Mil Toneladas" data-atual='3.630' data-projecao='4.093' data-variacao='12.8' data-label='Feijão' src='img/graos/feijao_grafico.png' alt='Feijão' onmouseover="showDesc( 'feijao')" onmouseout='cleanDesc()' />
+
+
+				    </div>
+				  
+					  <div class="item">
+				            <!-- canaAcucar -->
+				            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='canaAcucar' data-unidade="Mil Toneladas" data-atual='607.852' data-projecao='793.206' data-variacao='30.5' data-label='Cana de Açúcar' src='img/plantas/cana_grafico.png' alt='Cana de Açúcar' onmouseover="showDesc( 'canaAcucar')" onmouseout='cleanDesc()' />
+					  		<!-- mandioca -->
+				            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='mandioca' data-unidade="Mil Toneladas" data-atual='26.269' data-projecao='25.642' data-variacao='-2.4' data-label='Mandioca' src='img/plantas/mandioca_grafico.png' alt='Mandioca' onmouseover="showDesc( 'mandioca')" onmouseout='cleanDesc()' />
+				            <!-- celulose -->
+				            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='celulose' data-unidade="Mil Toneladas" data-atual='14.487' data-projecao='18.790' data-variacao='29.7' data-label='Celulose' src='img/plantas/celulose_grafico.png' alt='Celulose' onmouseover="showDesc( 'celulose')" onmouseout='cleanDesc()' />
+				            <!-- algodaoPluma -->
+				            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='algodaoPluma' data-unidade="Mil Toneladas" data-atual='2.155' data-projecao='2.241' data-variacao='4' data-label='Algodão pluma' src='img/plantas/algodao_grafico.png' alt='Algodão pluma' onmouseover="showDesc( 'algodaoPluma')" onmouseout='cleanDesc()' />
+				            <!-- fumo -->
+				            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='fumo' data-unidade="Mil Toneladas" data-atual='976' data-projecao='1.145' data-variacao='17.3' data-label='Fumo' src='img/plantas/fumo_grafico.png' alt='Fumo' onmouseover="showDesc( 'fumo')" onmouseout='cleanDesc()' />
+				            <!-- batataInglesa -->
+				            <img ondblclick="googleSearch(this)" class="elementoGrafico" id='batataInglesa' data-unidade="Mil Toneladas" data-atual='145' data-projecao='134' data-variacao='-7.1' data-label='Batata Inglesa' src='img/plantas/batata_grafico.png' alt='Batata Inglesa' onmouseover="showDesc( 'batataInglesa')" onmouseout='cleanDesc()' />
+					  </div>
+
+				  </div>
+				  <!-- Navegador do carousel -->
+				  <a class="carousel-control left visible-desktop" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+				  <a class="carousel-control right visible-desktop" href="#myCarousel" data-slide="next">&rsaquo;</a>
+				
+				</div>
+
+
+	        </div>
+
+	    <div class="footer visible-desktop">
+	        <p>Developed by <a href="https://twitter.com/colmelo">@colmelo</a>, <a href="https://twitter.com/LuanRcPinheiro">@luanrafael</a> & <a href="https://twitter.com/robyabreu">@robyabreu</a>
+	        </p>
+	    </div>
+
+	</body>
+
+</html>

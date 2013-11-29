@@ -1,0 +1,69 @@
+
+html, body, #wrap {height: 100%;}
+ 
+body , #wrap {height: auto; min-height: 100%;}
+ 
+#main {overflow:auto;
+	padding-bottom: 150px;}  /* deve ter a mesma altura do rodapé */
+ 
+.footer {
+
+	position: relative;
+	margin-top: -150px; /* valor negativo da altura do rodapé */
+	height: auto;
+	clear:both;
+	font-weight: bold;
+} 
+ 
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+
+
+img {
+	left: 15%;
+	float: left;
+	margin: 5px;
+	border-radius: 10px;
+	border-top-style: solid;
+	position: relative; 
+    bottom: 0;
+}
+
+h2{
+	color: black;
+}
+
+
+
+h1{
+	font-size: 48px;
+}
+
+#descricao {
+	font-size: 16px;
+	border-radius: 5px;
+	font-family:"Verdana",Times,serif;
+}
+
+header {
+	margin-top: 2px;
+	border-radius: 5px;
+	background: url(../img/fundo.jpg) ;
+	background-size: cover;
+	background-repeat:no-repeat;
+}
+
+.graos {
+	height: 80%;
+	width: 100%;
+}
+
+#carrosel {
+	height: 450px;
+}
